@@ -11,11 +11,13 @@ class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
     private lateinit var viewModel: MainActivityViewModel
+    private lateinit var viewModelFactory: MainActivityViewModelFactory
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
-        viewModel = ViewModelProvider(this)[MainActivityViewModel::class.java]
+        viewModelFactory = MainActivityViewModelFactory(0)
+        viewModel = ViewModelProvider(this, viewModelFactory)[MainActivityViewModel::class.java]
         binding.countTxt.text =viewModel.getCurrentCount().toString()
 
         binding.clickHereBtn.setOnClickListener {
