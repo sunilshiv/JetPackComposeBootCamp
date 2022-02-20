@@ -10,7 +10,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ViewModelDemo">
         <activity
-            android:name=".CounterActivity"
+            android:name=".DataBindingDemo2Activity"
+            android:exported="false" />
+        <activity
+            android:name=".DataBindingDemo3Activity"
             android:exported="false" />
         <activity
             android:name=".MainActivity"

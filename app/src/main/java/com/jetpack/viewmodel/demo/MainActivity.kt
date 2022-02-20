@@ -18,15 +18,24 @@ class MainActivity : AppCompatActivity() {
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
         viewModelFactory = MainActivityViewModelFactory(0)
         viewModel = ViewModelProvider(this, viewModelFactory)[MainActivityViewModel::class.java]
-        binding.countTxt.text =viewModel.getCurrentCount().toString()
 
-        binding.clickHereBtn.setOnClickListener {
-            binding.countTxt.text = viewModel.getUpdatedCount().toString()
+
+
+        binding.apply {
+            countTxt.text =viewModel.getCurrentCount().toString()
+            clickHereBtn.setOnClickListener {
+                countTxt.text = viewModel.getUpdatedCount().toString()
+               }
+        }
+        binding.startDemo2Activity.setOnClickListener {
+            val startNextActivity: Intent = Intent(this, DataBindingDemo2Activity::class.java)
+            startActivity(startNextActivity)
         }
 
-        binding.startNextActivity.setOnClickListener {
-            val intent: Intent = Intent(this, CounterActivity::class.java)
-            startActivity(intent)
+        binding.startDemo3Activity.setOnClickListener {
+            val startDataBindingDemoActivity = Intent(this, DataBindingDemo3Activity::class.java)
+            startActivity(startDataBindingDemoActivity)
         }
+
     }
 }

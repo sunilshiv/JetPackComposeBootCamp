@@ -24,17 +24,31 @@
         android:text="Button"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.529"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/count_txt" />
+        app:layout_constraintTop_toBottomOf="@+id/count_txt"
+        app:layout_constraintVertical_bias="0.194" />
 
     <Button
-        android:id="@+id/start_next_activity"
+        android:id="@+id/start_demo2_activity"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/start_next_activity"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.509"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/click_here_btn" />
+        app:layout_constraintTop_toBottomOf="@+id/click_here_btn"
+        app:layout_constraintVertical_bias="0.165" />
+
+    <Button
+        android:id="@+id/start_demo3_activity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/databinding_demo"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/start_demo2_activity" />
 </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
