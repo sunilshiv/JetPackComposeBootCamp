@@ -4,6 +4,4 @@
     <string name="enter_a_number">Enter a number</string>
     <string name="result_button">Result button</string>
     <string name="databinding_demo">Databinding demo 3</string>
-    <string name="student_name">Student Name</string>
-    <string name="student_email">Student email</string>
 </resources>

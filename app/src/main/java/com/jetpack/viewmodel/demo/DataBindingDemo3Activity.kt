@@ -12,12 +12,8 @@ class DataBindingDemo3Activity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         demo3Binding = DataBindingUtil.setContentView(this, R.layout.activity_databinding_demo3)
-       val student =   getStudentDetails()
+       demo3Binding.student = getStudentDetails()
 
-        demo3Binding.apply {
-            studentNameText.text = student.name
-            studentEmailTxt.text = student.email
-        }
     }
 
     private fun getStudentDetails(): Student {
