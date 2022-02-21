@@ -19,8 +19,6 @@ class MainActivity : AppCompatActivity() {
         viewModelFactory = MainActivityViewModelFactory(0)
         viewModel = ViewModelProvider(this, viewModelFactory)[MainActivityViewModel::class.java]
 
-
-
         binding.apply {
             countTxt.text =viewModel.getCurrentCount().toString()
             clickHereBtn.setOnClickListener {

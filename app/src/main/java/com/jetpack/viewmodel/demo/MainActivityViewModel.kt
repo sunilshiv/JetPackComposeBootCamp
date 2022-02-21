@@ -1,14 +1,19 @@
 package com.jetpack.viewmodel.demo
 
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 
 class MainActivityViewModel(startingTotal: Int): ViewModel() {
     private var count = 0
-    private var totalValue = 0
+
+    private var totalValue = MutableLiveData<Int>()
+    val totalData: LiveData<Int>
+    get() = totalValue
 
     init {
         count = startingTotal
-        totalValue = startingTotal
+        totalValue.value = startingTotal
     }
 
     fun getCurrentCount(): Int{
@@ -19,11 +24,7 @@ class MainActivityViewModel(startingTotal: Int): ViewModel() {
         return ++count
     }
 
-    fun getTotalValue(): Int{
-        return totalValue
-    }
-
     fun setTotalValue(input: Int) {
-        totalValue += input
+        totalValue.value = (totalValue.value)?.plus(input)
     }
 }

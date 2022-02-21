@@ -3,6 +3,7 @@ package com.jetpack.viewmodel.demo
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.databinding.DataBindingUtil
+import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.jetpack.viewmodel.demo.databinding.ActivityBindingDemo2Binding
 
@@ -18,11 +19,12 @@ class DataBindingDemo2Activity : AppCompatActivity() {
         viewModelFactory = MainActivityViewModelFactory(125)
         viewModel = ViewModelProvider(this, viewModelFactory)[MainActivityViewModel::class.java]
 
-       binding.resultTextview.text = viewModel.getTotalValue().toString()
+        viewModel.totalData.observe(this, Observer {
+            binding.resultTextview.text = it.toString()
+        })
 
         binding.resultBtn.setOnClickListener {
             viewModel.setTotalValue(binding.enterNumberEdittext.text.toString().toInt())
-            binding.resultTextview.text = viewModel.getTotalValue().toString()
         }
 
     }
