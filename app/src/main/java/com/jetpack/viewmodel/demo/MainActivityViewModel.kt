@@ -5,23 +5,20 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 
 class MainActivityViewModel(startingTotal: Int): ViewModel() {
-    private var count = 0
+
+    var count = MutableLiveData<Int>()
 
     private var totalValue = MutableLiveData<Int>()
     val totalData: LiveData<Int>
     get() = totalValue
 
     init {
-        count = startingTotal
+        count.value = 0
         totalValue.value = startingTotal
     }
 
-    fun getCurrentCount(): Int{
-        return count
-    }
-
-    fun getUpdatedCount(): Int{
-        return ++count
+    fun updateCount(){
+        count.value = (count.value)?.plus(1)
     }
 
     fun setTotalValue(input: Int) {

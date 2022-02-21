@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.databinding.DataBindingUtil
+import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.jetpack.viewmodel.demo.databinding.ActivityMainBinding
 
@@ -19,12 +20,14 @@ class MainActivity : AppCompatActivity() {
         viewModelFactory = MainActivityViewModelFactory(0)
         viewModel = ViewModelProvider(this, viewModelFactory)[MainActivityViewModel::class.java]
 
-        binding.apply {
-            countTxt.text =viewModel.getCurrentCount().toString()
-            clickHereBtn.setOnClickListener {
-                countTxt.text = viewModel.getUpdatedCount().toString()
-               }
+        viewModel.count.observe(this, Observer {
+            binding.countTxt.text = it.toString()
+        })
+
+        binding.clickHereBtn.setOnClickListener {
+           viewModel.updateCount()
         }
+
         binding.startDemo2Activity.setOnClickListener {
             val startNextActivity: Intent = Intent(this, DataBindingDemo2Activity::class.java)
             startActivity(startNextActivity)
