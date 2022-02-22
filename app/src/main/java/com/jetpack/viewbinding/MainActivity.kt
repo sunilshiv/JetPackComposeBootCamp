@@ -1,5 +1,6 @@
 package com.jetpack.viewbinding
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.databinding.DataBindingUtil
@@ -22,6 +23,11 @@ class MainActivity : AppCompatActivity() {
         viewModel.countUpdate.observe(this, Observer {
             binding.counterTextview.text = it.toString()
         })
+
+        binding.startLivedataBtn.setOnClickListener {
+            val intent = Intent(this, LiveDataDataBindingDemo::class.java)
+            startActivity(intent)
+        }
 
     }
 }

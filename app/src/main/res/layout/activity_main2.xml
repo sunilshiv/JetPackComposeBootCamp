@@ -2,50 +2,37 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
+
     <data>
         <variable
-            name="viewModel"
+            name="liveDataViewModel"
             type="com.jetpack.viewbinding.MainActivityViewModel" />
     </data>
+
 <androidx.constraintlayout.widget.ConstraintLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".LiveDataDataBindingDemo">
 
     <TextView
-        android:id="@+id/counter_textview"
+        android:id="@+id/count_livedata_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@{String.valueOf(viewModel.countUpdate)}"
-        android:textSize="32sp"
-        android:textStyle="bold"
-        android:typeface="serif"
+        android:text="@{String.valueOf(liveDataViewModel.countUpdate)}"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/update_count_btn"
+        android:id="@+id/livedata_binding_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:onClick="@{()->viewModel.updateCount()}"
-        android:text="Update Count"
+        android:text="@string/livedata_demo"
+        android:onClick="@{()->liveDataViewModel.updateCount()}"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/counter_textview" />
-
-    <Button
-        android:id="@+id/start_livedata_btn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/start_livedata_demo"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/update_count_btn" />
-
-
+        app:layout_constraintTop_toBottomOf="@+id/count_livedata_text" />
 </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
