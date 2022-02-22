@@ -18,9 +18,5 @@ class LiveDataDataBindingDemo : AppCompatActivity() {
         viewModel = ViewModelProvider(this)[MainActivityViewModel::class.java]
         bindingDemo.lifecycleOwner = this
         bindingDemo.liveDataViewModel = viewModel
-
-        viewModel.countUpdate.observe(this, Observer {
-            bindingDemo.countLivedataText.text = it.toString()
-        })
     }
 }
