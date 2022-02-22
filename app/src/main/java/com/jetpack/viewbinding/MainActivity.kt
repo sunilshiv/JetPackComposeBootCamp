@@ -29,5 +29,10 @@ class MainActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
+        binding.startTwowayDatabindingBtn.setOnClickListener {
+            val intent = Intent(this, TwoWayDataBindingDemoActivity::class.java)
+            startActivity(intent)
+        }
+
     }
 }
