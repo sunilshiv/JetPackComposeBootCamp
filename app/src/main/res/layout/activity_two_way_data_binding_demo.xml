@@ -5,12 +5,12 @@
     <data>
         <variable
             name="twoWayDatabindingViewModel"
-            type="com.jetpack.viewbinding.TwoWayDataBindingViewModel" />
+            type="com.jetpack.viewbinding.viewmodel.TwoWayDataBindingViewModel" />
     </data>
 <androidx.constraintlayout.widget.ConstraintLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".TwoWayDataBindingDemoActivity">
+    tools:context=".view.TwoWayDataBindingDemoActivity">
 
 
     <TextView
