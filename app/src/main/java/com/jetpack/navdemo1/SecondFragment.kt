@@ -19,6 +19,8 @@ class SecondFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         secondBinding = DataBindingUtil.inflate(inflater, R.layout.fragment_second, container, false)
+        var person_name: String? = arguments?.getString("person_name")
+        secondBinding.textView.text = person_name.toString()
         return secondBinding.root
     }
 
