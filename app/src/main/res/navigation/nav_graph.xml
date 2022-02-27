@@ -17,10 +17,68 @@
             app:exitAnim="@anim/slide_out_right"
             app:popEnterAnim="@anim/slide_in_right"
             app:popExitAnim="@anim/slide_out_left" />
+        <action
+            android:id="@+id/action_homeFragment_to_signUpFragment"
+            app:destination="@id/signUpFragment"
+            app:enterAnim="@anim/slide_in_left"
+            app:exitAnim="@anim/slide_in_right"
+            app:popEnterAnim="@anim/slide_out_right"
+            app:popExitAnim="@anim/slide_out_left" />
+        <action
+            android:id="@+id/action_homeFragment_to_termsFragment"
+            app:destination="@id/termsFragment"
+            app:enterAnim="@anim/push_down_in"
+            app:exitAnim="@anim/push_down_out"
+            app:popEnterAnim="@anim/push_up_in"
+            app:popExitAnim="@anim/push_up_out" />
     </fragment>
     <fragment
         android:id="@+id/secondFragment"
         android:name="com.jetpack.navdemo1.SecondFragment"
         android:label="fragment_second"
         tools:layout="@layout/fragment_second" />
+    <fragment
+        android:id="@+id/signUpFragment"
+        android:name="com.jetpack.navdemo1.SignUpFragment"
+        android:label="fragment_sign_up"
+        tools:layout="@layout/fragment_sign_up" >
+        <action
+            android:id="@+id/action_signUpFragment_to_emailFragment"
+            app:destination="@id/emailFragment"
+            app:enterAnim="@anim/slide_in_left"
+            app:exitAnim="@anim/slide_in_right"
+            app:popEnterAnim="@anim/slide_out_right"
+            app:popExitAnim="@anim/slide_out_left" />
+    </fragment>
+    <fragment
+        android:id="@+id/termsFragment"
+        android:name="com.jetpack.navdemo1.TermsFragment"
+        android:label="fragment_terms"
+        tools:layout="@layout/fragment_terms" />
+    <fragment
+        android:id="@+id/emailFragment"
+        android:name="com.jetpack.navdemo1.EmailFragment"
+        android:label="fragment_email"
+        tools:layout="@layout/fragment_email" >
+        <action
+            android:id="@+id/action_emailFragment_to_welcomeLandingFragment"
+            app:destination="@id/welcomeLandingFragment"
+            app:enterAnim="@anim/slide_in_left"
+            app:exitAnim="@anim/slide_in_right"
+            app:popEnterAnim="@anim/slide_out_right"
+            app:popExitAnim="@anim/slide_in_left" />
+    </fragment>
+    <fragment
+        android:id="@+id/welcomeLandingFragment"
+        android:name="com.jetpack.navdemo1.WelcomeLandingFragment"
+        android:label="fragment_welcome_landing"
+        tools:layout="@layout/fragment_welcome_landing" >
+        <action
+            android:id="@+id/action_welcomeLandingFragment_to_termsFragment"
+            app:destination="@id/termsFragment"
+            app:enterAnim="@anim/push_down_in"
+            app:exitAnim="@anim/push_down_out"
+            app:popEnterAnim="@anim/push_up_in"
+            app:popExitAnim="@anim/push_up_out" />
+    </fragment>
 </navigation>

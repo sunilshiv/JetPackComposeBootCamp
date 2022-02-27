@@ -28,6 +28,13 @@ class HomeFragment : Fragment() {
                 Toast.makeText(requireActivity(), "Please enter your name", Toast.LENGTH_SHORT).show()
             }
         }
+
+        homeBinding.signupButton.setOnClickListener {
+            it.findNavController().navigate(R.id.action_homeFragment_to_signUpFragment)
+        }
+        homeBinding.termsButton.setOnClickListener {
+            it.findNavController().navigate(R.id.action_homeFragment_to_termsFragment)
+        }
         return homeBinding.root
     }
 
